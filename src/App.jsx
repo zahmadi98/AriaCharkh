@@ -1,6 +1,7 @@
 import StatusBar from "./components/StatusBar";
 import Navbar from "./components/Navbar";
 import Menu from "./components/menu";
+import Slider from "./components/Slider";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <StatusBar />
       <Navbar />
       <Menu />
+      <Slider />
     </div>
   );
 }
