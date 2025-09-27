@@ -4,16 +4,10 @@ import { User, ShoppingCart, SearchNormal1, ArrowDown3 } from "iconsax-react";
 const Navbar = () => {
   return (
     <div className="w-full h-[4.125rem] px-20 py-2 flex items-center justify-between bg-white shadow">
-        <div className="flex items-center gap-4">
-            <ShoppingCart size={20} color="#000" className="cursor-pointer" />
-            <span className="text-gray-400">|</span>
-            <div className="flex items-center gap-1">
-                <ArrowDown3 size="17" color="#000" className="cursor-pointer"/>
-                <User size={20} color="#000" className="cursor-pointer" />
-            </div>
-        </div>
+        
 
         <div className="flex items-center gap-4">
+            <img src={logo} alt="Logo" className="h-12 w-auto" />
 
             <div className="w-[31.688rem] relative">
                 <input
@@ -25,9 +19,16 @@ const Navbar = () => {
                     <SearchNormal1 size="18" color="#6B7280" />
                 </div>
             </div>
+        </div>
 
-          <img src={logo} alt="Logo" className="h-12 w-auto" />
-      </div>
+        <div className="flex items-center gap-4"> 
+            <div className="flex items-center gap-1">
+                <User size={20} color="#000" className="cursor-pointer" />
+                <ArrowDown3 size="17" color="#000" className="cursor-pointer"/>
+            </div>
+            <span className="text-gray-400">|</span>
+            <ShoppingCart size={20} color="#000" className="cursor-pointer" />
+        </div>
 
     </div>
   );
