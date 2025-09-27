@@ -4,7 +4,7 @@ import OldPhone from '../assets/OldPhone.png';
 
 const StatusBar = () => {
   return (
-  <div className="w-full top-[3.688rem] px-20 py-2 flex bg-[#BDBEBD] h-[2rem]">
+  <div className="w-full font-vazir top-[3.688rem] px-20 py-2 flex bg-[#BDBEBD] h-[2rem]">
 
     <div className="flex-1 flex items-center justify-start gap-6">
    

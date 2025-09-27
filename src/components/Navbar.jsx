@@ -3,7 +3,7 @@ import { User, ShoppingCart, SearchNormal1, ArrowDown3 } from "iconsax-react";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[4.125rem] px-20 py-2 flex items-center justify-between bg-white shadow">
+    <div className="w-full font-vazir h-[4.125rem] px-20 py-2 flex items-center justify-between bg-white shadow">
         
 
         <div className="flex items-center gap-4">
