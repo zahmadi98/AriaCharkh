@@ -2,7 +2,7 @@ import StatusBar from "./components/StatusBar";
 import Navbar from "./components/Navbar";
 import Menu from "./components/menu";
 import Slider from "./components/Slider";
-
+import IconSection from "./components/miniIcons"
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -11,6 +11,7 @@ function App() {
       <Navbar />
       <Menu />
       <Slider />
+      <IconSection />
     </div>
   );
 }
