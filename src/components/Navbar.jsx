@@ -19,15 +19,15 @@ const Navbar = () => {
                 <input
                  type="text"
                  placeholder="دنبال چه محصولی هستی؟"
-                 className="w-full text-xs text-right pl-10 py-2 px-3 rounded-lg border bg-[#EDEDED] focus:outline-none focus:ring-2"
+                 className="w-full text-xs text-right pl-10 py-2 px-3 rounded-lg border border-gray-200 bg-[#EDEDED] shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
                 />
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
                     <SearchNormal1 size="18" color="#6B7280" />
                 </div>
             </div>
 
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
-        </div>
+          <img src={logo} alt="Logo" className="h-12 w-auto" />
+      </div>
 
     </div>
   );
