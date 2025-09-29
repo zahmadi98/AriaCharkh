@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import MyPhoto from "../assets/MyPhoto.jpg"
+import MobilePhoto from "../assets/MobilePhoto.jpg"
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -40,22 +41,32 @@ export default function Slider() {
             ref={sliderRef}
             dir="rtl"
             className="keen-slider transition-[height] duration-300">
-            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[27rem] ">
-             <img src={MyPhoto} />
-            </div>
-            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[27rem] bg-gradient-to-br from-[#FF9A3F] to-[#FF4B40]">
+          <div className="keen-slider__slide">
+            <img
+              src={MobilePhoto}
+              alt="mobile-slide"
+              className="block md:hidden w-full h-[15rem] object-cover"
+            />
+            <img
+              src={MyPhoto}
+              alt="desktop-slide"
+              className="hidden md:block w-full h-[27rem] object-cover"
+            />
+          </div>
+
+            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[15rem] md:h-[27rem] bg-gradient-to-br from-[#FF9A3F] to-[#FF4B40]">
               2
             </div>
-            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[27rem] bg-gradient-to-br from-[#BDFF53] to-[#2BFA52]">
+            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[15rem] md:h-[27rem] bg-gradient-to-br from-[#BDFF53] to-[#2BFA52]">
               3
             </div>
-            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[27rem] bg-gradient-to-br from-[#40FFF2] to-[#3FBCFF]">
+            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[15rem]  md:h-[27rem] bg-gradient-to-br from-[#40FFF2] to-[#3FBCFF]">
               4
             </div>
-            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[27rem] bg-gradient-to-br from-[#FF409C] to-[#FF3F3F]">
+            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[15rem]  md:h-[27rem] bg-gradient-to-br from-[#FF409C] to-[#FF3F3F]">
               5
             </div>
-            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[27rem] bg-gradient-to-br from-[#404CFF] to-[#AE3FFF]">
+            <div className="keen-slider__slide flex items-center justify-center text-[50px] font-medium text-white h-[15rem]  md:h-[27rem] bg-gradient-to-br from-[#404CFF] to-[#AE3FFF]">
             6
             </div>
         </div>
@@ -87,7 +98,7 @@ export default function Slider() {
 
 
       {loaded && instanceRef.current && (
-        <div className="flex justify-center py-4">
+        <div className="flex justify-center py-2 md:py-4">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => (

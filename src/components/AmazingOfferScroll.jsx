@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
+import { ArrowLeft2} from "iconsax-react";
 import "keen-slider/keen-slider.min.css"
 
 export default function FixedOverlaySlider() {
@@ -13,6 +14,14 @@ export default function FixedOverlaySlider() {
       mode: "free",
       rtl: true,
       slides: { perView: 7, spacing: 15 },
+      breakpoints: {
+      "(max-width: 768px)": {
+        slides: { perView: 1.2, spacing: 15 }, // موبایل: کمتر از یک ردیف کامل
+      },
+      "(min-width: 769px) and (max-width: 1024px)": {
+        slides: { perView: 3, spacing: 15 }, // تبلت: 3 اسلاید
+      },
+    },
       created() {
         setLoaded(true)
       },
@@ -78,7 +87,7 @@ export default function FixedOverlaySlider() {
   return (
     <div className="flex justify-center">
       <div
-        className="relative bg-[#ED1A3B] my-2 mx-40 w-full rounded-2xl"
+        className="relative bg-[#ED1A3B] my-2 mr-10 md:mx-40 w-full rounded-r-2xl md:rounded-2xl"
         style={{ padding: "1.5rem" }}
       >
         <div
@@ -86,25 +95,25 @@ export default function FixedOverlaySlider() {
           dir="rtl"
           className="keen-slider rounded-2xl overflow-visible relative z-0"
         >
-          <div className="keen-slider__slide bg-gradient-to-r from-[#40afff] to-[#3f61ff] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#40afff] to-[#3f61ff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             7
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#ff9a3f] to-[#ff4b40] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#ff9a3f] to-[#ff4b40] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             1
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#b6ff40] to-[#3fff47] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#b6ff40] to-[#3fff47] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             2
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#40fff2] to-[#3fbcff] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#40fff2] to-[#3fbcff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             3
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#ff409c] to-[#ff3f3f] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#ff409c] to-[#ff3f3f] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             4
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#404cff] to-[#ae3fff] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#404cff] to-[#ae3fff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             5
           </div> 
-          <div className="keen-slider__slide bg-gradient-to-r from-[#40afff] to-[#3f61ff] flex items-center justify-center text-white text-5xl font-medium h-[280px]">
+          <div className="keen-slider__slide bg-gradient-to-r from-[#40afff] to-[#3f61ff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
             6
           </div>
         </div>
@@ -143,12 +152,15 @@ export default function FixedOverlaySlider() {
             }}
           >
             <h3 className="text-white text-3xl text-center font-vazir font-bold">پیشنهاد شگفت انگیز</h3>
+            <div className="flex items-center gap-1">
             <a
               href="/next-page"
-              className="mt-2 text-sm bg-white/90 text-black px-3 py-1 rounded-md pointer-events-auto font-vazir"
+              className="mt-2 text-sm  text-white px-3 py-1 rounded-md pointer-events-auto font-vazir"
             >
               مشاهده همه
             </a>
+            <ArrowLeft2 size={16} color="#FFF"/>
+            </div>
           </div>
         )}
       </div>

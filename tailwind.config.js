@@ -9,6 +9,9 @@ export default {
       fontFamily: {
       vazir: ['Vazir', 'sans-serif'],
     },
+     screens: {
+        'md': '768px', 
+      },
     },
   },
   plugins: [],

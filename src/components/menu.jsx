@@ -30,7 +30,7 @@ const NavbarMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <nav className="bg-white font-vazir shadow px-20 py-3 border-t-2">
+    <nav className="hidden md:block bg-white font-vazir shadow px-20 py-3 border-t-2">
       <ul className="flex gap-8 rtl:flex-row">
         {menuItems.map((item, idx) => (
           <li key={idx} className="relative">
