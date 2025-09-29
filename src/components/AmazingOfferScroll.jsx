@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import { ArrowLeft2} from "iconsax-react";
-import "keen-slider/keen-slider.min.css"
+import "keen-slider/keen-slider.min.css";
+import ProductCard from "./ProductCard";
+import OfferItems from "../assets/OfferItems.png";
 
 export default function FixedOverlaySlider() {
   const containerRef = useRef(null)
@@ -95,26 +97,68 @@ export default function FixedOverlaySlider() {
           dir="rtl"
           className="keen-slider rounded-2xl overflow-visible relative z-0"
         >
-          <div className="keen-slider__slide bg-gradient-to-r from-[#40afff] to-[#3f61ff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            7
+          <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#ff9a3f] to-[#ff4b40] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            1
+             <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#b6ff40] to-[#3fff47] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            2
+             <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#40fff2] to-[#3fbcff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            3
+             <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#ff409c] to-[#ff3f3f] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            4
+             <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
           </div>
-          <div className="keen-slider__slide bg-gradient-to-r from-[#404cff] to-[#ae3fff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            5
-          </div> 
-          <div className="keen-slider__slide bg-gradient-to-r from-[#40afff] to-[#3f61ff] flex items-center justify-center  text-white text-5xl font-medium h-[280px]">
-            6
+             <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
+          </div>
+             <div className="keen-slider__slide">
+            <ProductCard
+              image={OfferItems}
+              originalPrice="۱۷,۵۰۰,۰۰۰"
+              price="۱۵,۰۰۰,۰۰۰ تومان"
+              discountPercent={80}
+              progress={60}
+            />
           </div>
         </div>
 
@@ -173,12 +217,12 @@ function Arrow({ left, onClick, ariaLabel }) {
     <button
       onClick={onClick}
       aria-label={ariaLabel}
-      className={`absolute top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-1 ${
-        left ? "left-2" : "right-2"
-      }`}
+      className={`absolute top-1/2 -translate-y-1/2 z-20 flex items-center justify-center 
+        w-10 h-10 rounded-full bg-white border border-gray-300 shadow-sm
+        ${left ? "left-3" : "right-3"}`}
     >
       <svg
-        className="w-[30px] h-[30px] fill-white"
+        className="w-4 h-4 fill-red-600"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -191,3 +235,4 @@ function Arrow({ left, onClick, ariaLabel }) {
     </button>
   )
 }
+
