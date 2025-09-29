@@ -16,10 +16,10 @@ export default function FixedOverlaySlider() {
       slides: { perView: 7, spacing: 15 },
       breakpoints: {
       "(max-width: 768px)": {
-        slides: { perView: 1.2, spacing: 15 }, // موبایل: کمتر از یک ردیف کامل
+        slides: { perView: 1.2, spacing: 15 }, 
       },
       "(min-width: 769px) and (max-width: 1024px)": {
-        slides: { perView: 3, spacing: 15 }, // تبلت: 3 اسلاید
+        slides: { perView: 3, spacing: 15 }, 
       },
     },
       created() {
