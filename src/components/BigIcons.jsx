@@ -14,103 +14,103 @@ const Banner = () => {
   return (
     <div className="space-y-12 mb-10 mt-10 font-vazir mr-4">
 
-      <div className="grid grid-cols-3 md:grid-cols-6 mx-3 md:mx-56 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 2xl:grid-cols-6 mx-1 sm:mx-3 md:mx-5 lg:mx-32 xl:mx-24 2xl:mx-56 gap-6">
         
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#ADC0FF] to-[#A8AEFF] rounded-full w-[8rem] h-[8rem]s md:w-[11rem] md:h-[11rem] grid place-items-center">
+          <div className="bg-gradient-to-br from-[#ADC0FF] to-[#A8AEFF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
             <img src={BicycleLights} alt="چراغ دوچرخه"/>
           </div>
           <p className="mt-2 text-center">چراغ دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#99FDFF] to-[#D1B3FF] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
+          <div className="bg-gradient-to-br from-[#99FDFF] to-[#D1B3FF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
             <img src={ToolBox} alt="جعبه ابزار" className="pr-6"/>
           </div>
           <p className="mt-2 text-center">دسته ابزار</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#FAE0D1] to-[#FDF2CE] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] relative">
+          <div className="bg-gradient-to-br from-[#FAE0D1] to-[#FDF2CE] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] relative">
             <img 
               src={BicyclePump} 
               alt="تلمبه" 
-              className="md:h-[14rem] absolute top-[-2rem] left-1/2 transform -translate-x-1/2"
+              className="lg:h-[14rem] absolute top-[-2rem] left-1/2 transform -translate-x-1/2"
             />
           </div>
           <p className="mt-2 text-center">تلمبه دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#D1FADC] to-[#EECFFC] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
+          <div className="bg-gradient-to-br from-[#D1FADC] to-[#EECFFC] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
             <img src={BicycleGearChange} alt="دنده"/>
           </div>
           <p className="mt-2 text-center">شانژمان دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#D8D0FB] to-[#FCDBCF] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
+          <div className="bg-gradient-to-br from-[#D8D0FB] to-[#FCDBCF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
             <img src={BicycleThermos} alt="قمقمه"/>
           </div>
           <p className="mt-2 text-center">قمقمه دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#EAFFCC] to-[#CFEDFC] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] relative">
+          <div className="bg-gradient-to-br from-[#EAFFCC] to-[#CFEDFC] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] relative">
             <img 
               src={BicycleTire} 
               alt="تایر و تیوپ" 
-              className="md:h-[14rem] absolute md:top-[-3rem] left-1/2 transform -translate-x-1/2"
+              className="lg:h-[14rem] absolute md:top-[-3rem] left-1/2 transform -translate-x-1/2"
             />
           </div>
           <p className="mt-2 text-center">تایر و تیوپ</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-5 mx-3 gap-6 md:mx-72">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 mx-3 gap-6 sm:mx-5 lg:mx-32 xl:mx-44 2xl:mx-72">
         
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#BAFFAD] to-[#ADCEFF] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
+          <div className="bg-gradient-to-br from-[#BAFFAD] to-[#ADCEFF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
             <img src={BicycleGlasses} alt="عینک"/>
           </div>
           <p className="mt-2 text-center">عینک دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#FFF3C2] to-[#A3AEFF] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
+          <div className="bg-gradient-to-br from-[#FFF3C2] to-[#A3AEFF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
             <img src={BicycleRack} alt="باربند"/>
           </div>
           <p className="mt-2 text-center">باربند دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#FFDCB8] to-[#C7FFD0] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] relative">
+          <div className="bg-gradient-to-br from-[#FFDCB8] to-[#C7FFD0] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] relative">
             <img 
               src={ThermosHolder} 
               alt="نگهدارنده قمقمه" 
-              className="md:h-[14rem] absolute md:top-[-3rem] left-1/2 transform -translate-x-1/2"
+              className="lg:h-[14rem] absolute md:top-[-3rem] left-1/2 transform -translate-x-1/2"
             />
           </div>
           <p className="mt-2 text-center">بست قمقمه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#FFC7CA] to-[#E299FF] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] relative">
+          <div className="bg-gradient-to-br from-[#FFC7CA] to-[#E299FF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] relative">
             <img 
               src={BicyclePedal} 
               alt="پدال" 
-              className="md:h-[14rem] absolute top-[-2rem] left-1/2 transform -translate-x-1/2"
+              className="lg:h-[14rem] absolute top-[-2rem] left-1/2 transform -translate-x-1/2"
             />
           </div>
           <p className="mt-2 text-center">پدال دوچرخه</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-[#F5FFA8] to-[#9EFFD8] rounded-full w-[8rem] h-[8rem] md:w-[11rem] md:h-[11rem] relative">
+          <div className="bg-gradient-to-br from-[#F5FFA8] to-[#9EFFD8] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] relative">
             <img 
               src={BicycleSaddle} 
               alt="زین" 
-              className="md:h-[14rem] absolute md:top-[-1rem] left-1/2 transform -translate-x-1/2"
+              className="lg:h-[14rem] absolute md:top-[-1rem] left-1/2 transform -translate-x-1/2"
             />
           </div>
           <p className="mt-2 text-center">زین دوچرخه</p>
