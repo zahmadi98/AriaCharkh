@@ -4,7 +4,8 @@ import Menu from "./components/menu";
 import Slider from "./components/Slider";
 import IconSection from "./components/miniIcons";
 import AmazingOfferScroll from "./components/AmazingOfferScroll";
-import Banner from './components/Banner.jsx'
+import Banner from './components/Banner.jsx';
+import BigIcons from './components/BigIcons.jsx'
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -15,6 +16,8 @@ function App() {
       <Slider />
       <IconSection />
       <AmazingOfferScroll />
+      <Banner />
+      <BigIcons />
       <Banner />
     </div>
   );
