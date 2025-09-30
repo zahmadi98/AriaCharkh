@@ -89,7 +89,7 @@ export default function FixedOverlaySlider() {
   return (
     <div className="flex justify-center">
       <div
-        className="relative bg-[#ED1A3B] my-2 mr-10 md:mx-40 w-full rounded-r-2xl md:rounded-2xl"
+        className="relative bg-[#ED1A3B] my-2 mr-12 md:mx-40 w-full rounded-r-2xl md:rounded-2xl"
         style={{ padding: "1.5rem" }}
       >
         <div
