@@ -1,29 +1,31 @@
 import React, { useState } from "react";
-import { ArrowDown2} from "iconsax-react";
-import Bike from "../assets/Bike.png" 
-import Helmet from "../assets/Helmet.png"
-import Gear from "../assets/Gear.png"
+import { ArrowDown2 } from "iconsax-react";
+import { Link } from "react-router-dom";   // ✅ اضافه شد
+import Bike from "../assets/Bike.png";
+import Helmet from "../assets/Helmet.png";
+import Gear from "../assets/Gear.png";
+
 const menuItems = [
   {
     label: "دوچرخه",
     dropdown: ["مورد اول", "مورد دوم", "مورد سوم"],
-    icon: <ArrowDown2 size={16} color="#000"/>,
+    icon: <ArrowDown2 size={16} color="#000" />,
     icon2: <img src={Bike} className="w-7 h-5" />
   },
   {
     label: "لوازم دوچرخه",
     dropdown: ["مورد اول", "مورد دوم", "مورد سوم"],
-    icon: <ArrowDown2 size={16} color="#000"/>,
+    icon: <ArrowDown2 size={16} color="#000" />,
     icon2: <img src={Helmet} className="w-5 h-5" />
   },
   {
     label: "قطعات دوچرخه",
     dropdown: ["مورد اول", "مورد دوم", "مورد سوم"],
-    icon: <ArrowDown2 size={16} color="#000"/>,
+    icon: <ArrowDown2 size={16} color="#000" />,
     icon2: <img src={Gear} className="w-5 h-5" />
   },
-  { label: "درباره ما", link: "/blog" },
-  { label: "تماس با ما", link: "/contact" },
+  { label: "درباره ما", link: "/about" },   // ✅ مسیر اصلاح شد
+  { label: "تماس با ما", link: "/contact" }, // ✅ مسیر اصلاح شد
 ];
 
 const NavbarMenu = () => {
@@ -48,7 +50,7 @@ const NavbarMenu = () => {
                     className={`${openDropdown === idx ? "text-indigo-600" : "text-gray-700"} 
                     hover:text-indigo-600`}
                   >
-                    {item.icon2 }
+                    {item.icon2}
                   </span>
                 )}
                 {item.label}
@@ -62,15 +64,14 @@ const NavbarMenu = () => {
                 )}
               </button>
             ) : (
-              <a
-                href={item.link}
+              <Link       // ✅ به جای a از Link استفاده شد
+                to={item.link}
                 className="font-medium text-gray-700 hover:text-indigo-600 transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             )}
 
-            {/* Dropdown */}
             {item.dropdown && openDropdown === idx && (
               <ul className="absolute top-full mt-1 bg-white border border-gray-200 rounded shadow-lg w-40 z-50">
                 {item.dropdown.map((subItem, subIdx) => (
