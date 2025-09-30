@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
-import { ArrowLeft2} from "iconsax-react";
-import "keen-slider/keen-slider.min.css";
-import ProductCard from "./ProductCard";
-import OfferItems from "../assets/OfferItems.png";
+import { ArrowLeft2} from "iconsax-react"
+import "keen-slider/keen-slider.min.css"
+import ProductCard from "./ProductCard"
+import OfferItems from "../assets/OfferItems.png"
 
 export default function FixedOverlaySlider() {
   const containerRef = useRef(null)

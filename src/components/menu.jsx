@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ArrowDown2 } from "iconsax-react";
-import { Link } from "react-router-dom";   // ✅ اضافه شد
+import { Link } from "react-router-dom";  
 import Bike from "../assets/Bike.png";
 import Helmet from "../assets/Helmet.png";
 import Gear from "../assets/Gear.png";
@@ -24,8 +24,8 @@ const menuItems = [
     icon: <ArrowDown2 size={16} color="#000" />,
     icon2: <img src={Gear} className="w-5 h-5" />
   },
-  { label: "درباره ما", link: "/about" },   // ✅ مسیر اصلاح شد
-  { label: "تماس با ما", link: "/contact" }, // ✅ مسیر اصلاح شد
+  { label: "درباره ما", link: "/about" },   
+  { label: "تماس با ما", link: "/contact" }, 
 ];
 
 const NavbarMenu = () => {
@@ -64,7 +64,7 @@ const NavbarMenu = () => {
                 )}
               </button>
             ) : (
-              <Link       // ✅ به جای a از Link استفاده شد
+              <Link       
                 to={item.link}
                 className="font-medium text-gray-700 hover:text-indigo-600 transition-colors"
               >
