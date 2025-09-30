@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import MyPhoto from "../assets/MyPhoto.jpg"
@@ -19,6 +19,16 @@ export default function Slider() {
       },
     }
   )
+
+  useEffect(() => {
+  if (!loaded || !instanceRef.current) return
+
+  const interval = setInterval(() => {
+    instanceRef.current?.next()
+  }, 3000) 
+
+  return () => clearInterval(interval)
+}, [loaded, instanceRef])
 
   const totalSlides =
     loaded && instanceRef.current
