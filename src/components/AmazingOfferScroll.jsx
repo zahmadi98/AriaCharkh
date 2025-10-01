@@ -1,15 +1,15 @@
-import React, { useRef, useEffect, useState } from "react"
-import { useKeenSlider } from "keen-slider/react"
-import { ArrowLeft2} from "iconsax-react"
-import "keen-slider/keen-slider.min.css"
-import ProductCard from "./ProductCard"
-import OfferItems from "../assets/OfferItems.png"
-import { Link } from "react-router-dom";  
+import React, { useRef, useEffect, useState } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import { ArrowLeft2 } from "iconsax-react";
+import "keen-slider/keen-slider.min.css";
+import ProductCard from "./ProductCard";
+import OfferItems from "../assets/OfferItems.png";
+import { Link } from "react-router-dom";
 
 export default function FixedOverlaySlider() {
-  const containerRef = useRef(null)
-  const [overlayRect, setOverlayRect] = useState(null)
-  const [loaded, setLoaded] = useState(false)
+  const containerRef = useRef(null);
+  const [overlayRect, setOverlayRect] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -18,74 +18,162 @@ export default function FixedOverlaySlider() {
       rtl: true,
       slides: { perView: 7, spacing: 15 },
       breakpoints: {
-      "(max-width: 768px)": {
-        slides: { perView: 1.2, spacing: 15 }, 
+        "(max-width: 768px)": {
+          slides: { perView: 1.2, spacing: 15 },
+        },
+        "(min-width: 769px) and (max-width: 1024px)": {
+          slides: { perView: 3, spacing: 15 },
+        },
       },
-      "(min-width: 769px) and (max-width: 1024px)": {
-        slides: { perView: 3, spacing: 15 }, 
-      },
-    },
       created() {
-        setLoaded(true)
+        setLoaded(true);
       },
     },
     []
-  )
+  );
 
   const combinedRef = (el) => {
-    sliderRef(el)
-    containerRef.current = el
-  }
+    sliderRef(el);
+    containerRef.current = el;
+  };
 
   useEffect(() => {
-    if (!containerRef.current) return
-    let mounted = true
+    if (!containerRef.current) return;
+    let mounted = true;
 
     const updateOverlay = () => {
-      if (!containerRef.current) return
-      const slides = containerRef.current.querySelectorAll(".keen-slider__slide")
-      const slot = slides[6]
+      if (!containerRef.current) return;
+      const slides = containerRef.current.querySelectorAll(".keen-slider__slide");
+      const slot = slides[6];
       if (!slot) {
-        setOverlayRect(null)
-        return
+        setOverlayRect(null);
+        return;
       }
-      const containerRect = containerRef.current.getBoundingClientRect()
-      const slotRect = slot.getBoundingClientRect()
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const slotRect = slot.getBoundingClientRect();
 
-      const right = containerRect.right - slotRect.right
+      const right = containerRect.right - slotRect.right;
 
-      if (!mounted) return
+      if (!mounted) return;
       setOverlayRect({
-        right, 
+        right,
         width: slotRect.width,
         left: slotRect.left - containerRect.left,
-      })
-    }
+      });
+    };
 
-    requestAnimationFrame(updateOverlay)
-    const t = setTimeout(updateOverlay, 50)
-    window.addEventListener("resize", updateOverlay)
+    requestAnimationFrame(updateOverlay);
+    const t = setTimeout(updateOverlay, 50);
+    window.addEventListener("resize", updateOverlay);
 
-    const inst = instanceRef && instanceRef.current
+    const inst = instanceRef && instanceRef.current;
     if (inst && inst.on) {
-      inst.on("created", updateOverlay)
-      inst.on("detailsChanged", updateOverlay)
-      inst.on("animationEnd", updateOverlay)
-      inst.on("dragEnd", updateOverlay)
+      inst.on("created", updateOverlay);
+      inst.on("detailsChanged", updateOverlay);
+      inst.on("animationEnd", updateOverlay);
+      inst.on("dragEnd", updateOverlay);
     }
 
     return () => {
-      mounted = false
-      clearTimeout(t)
-      window.removeEventListener("resize", updateOverlay)
+      mounted = false;
+      clearTimeout(t);
+      window.removeEventListener("resize", updateOverlay);
       if (inst && inst.off) {
-        inst.off("created", updateOverlay)
-        inst.off("detailsChanged", updateOverlay)
-        inst.off("animationEnd", updateOverlay)
-        inst.off("dragEnd", updateOverlay)
+        inst.off("created", updateOverlay);
+        inst.off("detailsChanged", updateOverlay);
+        inst.off("animationEnd", updateOverlay);
+        inst.off("dragEnd", updateOverlay);
       }
-    }
-  }, [instanceRef])
+    };
+  }, [instanceRef]);
+
+  // یک آرایه نمونه محصولات — فقط داده‌های ساده فرستاده می‌شوند
+  const products = [
+    {
+      id: 1,
+      Title: "پیشنهاد ۱",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۱",
+      originalPrice: "۱۷,۵۰۰,۰۰۰",
+      price: "۱۵,۰۰۰,۰۰۰ تومان",
+      discountPercent: 80,
+      progress: 30,
+      Score: "۴.۳",
+      TimeLeft: "۰۹:۰۰:۰۰",
+    },
+    {
+      id: 2,
+      Title: "پیشنهاد ۲",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۲",
+      originalPrice: "۱۳,۵۰۰,۰۰۰",
+      price: "۱۲,۰۰۰,۰۰۰ تومان",
+      discountPercent: 15,
+      progress: 60,
+      Score: "۴.۱",
+      TimeLeft: "۱۲:۱۲:۱۲",
+    },
+    {
+      id: 3,
+      Title: "پیشنهاد ۳",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۳",
+      originalPrice: "۹,۵۰۰,۰۰۰",
+      price: "۹,۰۰۰,۰۰۰ تومان",
+      discountPercent: 80,
+      progress: 70,
+      Score: "۴.۷",
+      TimeLeft: "۰۱:۲۰:۰۰",
+    },
+    {
+      id: 4,
+      Title: "پیشنهاد ۴",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۴",
+      originalPrice: "۱۱,۵۰۰,۰۰۰",
+      price: "۱۰,۰۰۰,۰۰۰ تومان",
+      discountPercent: 40,
+      progress: 10,
+      Score: "۳.۹",
+      TimeLeft: "۰۵:۰۰:۰۰",
+    },
+    {
+      id: 5,
+      Title: "پیشنهاد ۵",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۵",
+      originalPrice: "۱۴,۵۰۰,۰۰۰",
+      price: "۱۲,۵۰۰,۰۰۰ تومان",
+      discountPercent: 63,
+      progress: 50,
+      Score: "۴.۶",
+      TimeLeft: "۰۸:۳۰:۰۰",
+    },
+    {
+      id: 6,
+      Title: "پیشنهاد ۶",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۶",
+      originalPrice: "۱۶,۵۰۰,۰۰۰",
+      price: "۱۵,۵۰۰,۰۰۰ تومان",
+      discountPercent: 80,
+      progress: 23,
+      Score: "۴.۸",
+      TimeLeft: "۰۰:۳۰:۰۰",
+    },
+    {
+      id: 7,
+      Title: "پیشنهاد ۷",
+      image: OfferItems,
+      Description: "توضیحات پیشنهاد ۷",
+      originalPrice: "۱۸,۵۰۰,۰۰۰",
+      price: "۱۷,۰۰۰,۰۰۰ تومان",
+      discountPercent: 70,
+      progress: 100,
+      Score: "۵.۰",
+      TimeLeft: "۰۰:۰۰:۰۰",
+    },
+  ];
 
   return (
     <div className="flex justify-center">
@@ -98,91 +186,38 @@ export default function FixedOverlaySlider() {
           dir="rtl"
           className="keen-slider rounded-2xl overflow-visible relative z-0"
         >
-          <div className="keen-slider__slide">
-  <Link
-    to="/product"
-    state={{
-      Title: "پیشنهاد شگفت انگیز",
-      image: OfferItems,
-      Description: "توضیحات محصول ...",
-      originalPrice: "۱۷,۵۰۰,۰۰۰",
-      price: "۱۵,۰۰۰,۰۰۰ تومان",
-      discountPercent: 80,
-      // هر prop دیگری که MainCard نیاز دارد
-    }}
-    className="block"   // مهم: Link را بلاک کن تا اندازه کارت را بگیرد
-  >
-    <ProductCard
-      image={OfferItems}
-      originalPrice="۱۷,۵۰۰,۰۰۰"
-      price="۱۵,۰۰۰,۰۰۰ تومان"
-      discountPercent={"۸۰"}
-      progress={30}
-    />
-  </Link>
-</div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={"۱۵"}
-              progress={60}
-            />
-          </div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={"۸۰"}
-              progress={70}
-            />
-          </div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={"۴۰"}
-              progress={10}
-            />
-          </div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={"۶۳"}
-              progress={50}
-            />
-          </div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={"۸۰"}
-              progress={23}
-            />
-          </div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={"۷۰"}
-              progress={100}
-            />
-          </div>
+          {products.map((prod) => {
+            // state فقط داده‌های ساده ارسال می‌شود
+            const stateData = {
+              Title: prod.Title,
+              image: prod.image,
+              Description: prod.Description,
+              originalPrice: prod.originalPrice,
+              price: prod.price,
+              discountPercent: prod.discountPercent,
+              progress: prod.progress,
+              Score: prod.Score,
+              TimeLeft: prod.TimeLeft,
+            };
+
+            return (
+              <div key={prod.id} className="keen-slider__slide">
+                <Link to="/product" state={stateData} className="block w-full">
+                  <ProductCard
+                    image={prod.image}
+                    originalPrice={prod.originalPrice}
+                    price={prod.price}
+                    discountPercent={String(prod.discountPercent)}
+                    progress={prod.progress}
+                  />
+                </Link>
+              </div>
+            );
+          })}
         </div>
 
         {loaded && instanceRef.current && (
-          <Arrow
-            left
-            onClick={() => instanceRef.current?.next()}
-            ariaLabel="اسلاید بعدی"
-          />
+          <Arrow left onClick={() => instanceRef.current?.next()} ariaLabel="اسلاید بعدی" />
         )}
 
         {overlayRect && (
@@ -212,19 +247,19 @@ export default function FixedOverlaySlider() {
           >
             <h3 className="text-white text-3xl text-center font-vazir font-bold">پیشنهاد شگفت انگیز</h3>
             <div className="flex items-center gap-1">
-            <a
-              href="/next-page"
-              className="mt-2 text-sm  text-white px-3 py-1 rounded-md pointer-events-auto font-vazir"
-            >
-              مشاهده همه
-            </a>
-            <ArrowLeft2 size={16} color="#FFF"/>
+              <a
+                href="/next-page"
+                className="mt-2 text-sm text-white px-3 py-1 rounded-md pointer-events-auto font-vazir"
+              >
+                مشاهده همه
+              </a>
+              <ArrowLeft2 size={16} color="#FFF" />
             </div>
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }
 
 function Arrow({ left, onClick, ariaLabel }) {
@@ -248,6 +283,5 @@ function Arrow({ left, onClick, ariaLabel }) {
         )}
       </svg>
     </button>
-  )
+  );
 }
-
