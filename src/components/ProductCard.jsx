@@ -1,5 +1,4 @@
 import React from "react";
-import OfferItems from "../assets/OfferItems.png"
 
 export default function ProductCard({
   image = "عکس",
@@ -12,14 +11,13 @@ export default function ProductCard({
 
   return (
     <div className="max-w-xs bg-white rounded-xl font-medium h-[280px] shadow-md overflow-hidden">
-      {/* تصویر */}
+     
       <div className="relative">
         <img src={image} className="w-full h-40 object-cover" />
       </div>
 
       <div className="p-4 font-vazir">
 
-        {/* قیمت‌ها */}
         <div className="flex text-right flex-col gap-3">
           <span className="flex items-center gap-2 text-sm text-gray-400 ">
             <div className="line-through">
@@ -35,7 +33,6 @@ export default function ProductCard({
           </span>
         </div>
 
-        {/* نوار پیشرفت */}
         <div className="mt-4">
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div

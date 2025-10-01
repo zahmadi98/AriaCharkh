@@ -4,6 +4,7 @@ import { ArrowLeft2} from "iconsax-react"
 import "keen-slider/keen-slider.min.css"
 import ProductCard from "./ProductCard"
 import OfferItems from "../assets/OfferItems.png"
+import { Link } from "react-router-dom";  
 
 export default function FixedOverlaySlider() {
   const containerRef = useRef(null)
@@ -98,11 +99,34 @@ export default function FixedOverlaySlider() {
           className="keen-slider rounded-2xl overflow-visible relative z-0"
         >
           <div className="keen-slider__slide">
+  <Link
+    to="/product"
+    state={{
+      Title: "پیشنهاد شگفت انگیز",
+      image: OfferItems,
+      Description: "توضیحات محصول ...",
+      originalPrice: "۱۷,۵۰۰,۰۰۰",
+      price: "۱۵,۰۰۰,۰۰۰ تومان",
+      discountPercent: 80,
+      // هر prop دیگری که MainCard نیاز دارد
+    }}
+    className="block"   // مهم: Link را بلاک کن تا اندازه کارت را بگیرد
+  >
+    <ProductCard
+      image={OfferItems}
+      originalPrice="۱۷,۵۰۰,۰۰۰"
+      price="۱۵,۰۰۰,۰۰۰ تومان"
+      discountPercent={"۸۰"}
+      progress={30}
+    />
+  </Link>
+</div>
+             <div className="keen-slider__slide">
             <ProductCard
               image={OfferItems}
               originalPrice="۱۷,۵۰۰,۰۰۰"
               price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
+              discountPercent={"۱۵"}
               progress={60}
             />
           </div>
@@ -111,8 +135,8 @@ export default function FixedOverlaySlider() {
               image={OfferItems}
               originalPrice="۱۷,۵۰۰,۰۰۰"
               price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
-              progress={60}
+              discountPercent={"۸۰"}
+              progress={70}
             />
           </div>
              <div className="keen-slider__slide">
@@ -120,8 +144,8 @@ export default function FixedOverlaySlider() {
               image={OfferItems}
               originalPrice="۱۷,۵۰۰,۰۰۰"
               price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
-              progress={60}
+              discountPercent={"۴۰"}
+              progress={10}
             />
           </div>
              <div className="keen-slider__slide">
@@ -129,8 +153,8 @@ export default function FixedOverlaySlider() {
               image={OfferItems}
               originalPrice="۱۷,۵۰۰,۰۰۰"
               price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
-              progress={60}
+              discountPercent={"۶۳"}
+              progress={50}
             />
           </div>
              <div className="keen-slider__slide">
@@ -138,8 +162,8 @@ export default function FixedOverlaySlider() {
               image={OfferItems}
               originalPrice="۱۷,۵۰۰,۰۰۰"
               price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
-              progress={60}
+              discountPercent={"۸۰"}
+              progress={23}
             />
           </div>
              <div className="keen-slider__slide">
@@ -147,17 +171,8 @@ export default function FixedOverlaySlider() {
               image={OfferItems}
               originalPrice="۱۷,۵۰۰,۰۰۰"
               price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
-              progress={60}
-            />
-          </div>
-             <div className="keen-slider__slide">
-            <ProductCard
-              image={OfferItems}
-              originalPrice="۱۷,۵۰۰,۰۰۰"
-              price="۱۵,۰۰۰,۰۰۰ تومان"
-              discountPercent={80}
-              progress={60}
+              discountPercent={"۷۰"}
+              progress={100}
             />
           </div>
         </div>

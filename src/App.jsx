@@ -8,6 +8,10 @@ import IconSection from "./components/miniIcons";
 import AmazingOfferScroll from "./components/AmazingOfferScroll";
 import Banner from './components/Banner.jsx';
 import BigIcons from './components/BigIcons.jsx';
+import ProductPage from "./components/ProductPage";
+import MainCard from "./components/MainCard";   // ✅ کامپوننت کارتت
+import { Star, Glass } from "iconsax-react";    // ✅ آیکون‌ها
+
 
 function AboutPage() {
   return <div className="p-10 text-xl">این صفحه درباره ما است</div>;
@@ -15,7 +19,6 @@ function AboutPage() {
 function ContactPage() {
   return <div className="p-10 text-xl">این صفحه تماس با ما است</div>;
 }
-
 function App() {
   return (
     <Router>
@@ -36,11 +39,13 @@ function App() {
                 <Banner />
                 <BigIcons />
                 <Banner />
+                
               </>
             }
           />
           <Route path="/about" element={<AboutPage />} />   
           <Route path="/contact" element={<ContactPage />} /> 
+          <Route path="/product" element={<ProductPage />} /> 
         </Routes>
       </div>
     </Router>
