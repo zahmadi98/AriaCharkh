@@ -87,7 +87,6 @@ export default function FixedOverlaySlider() {
     };
   }, [instanceRef]);
 
-  // یک آرایه نمونه محصولات — فقط داده‌های ساده فرستاده می‌شوند
   const products = [
     {
       id: 1,

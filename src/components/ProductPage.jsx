@@ -1,4 +1,3 @@
-// src/components/ProductPage.jsx
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import MainCard from "./MainCard";
@@ -20,7 +19,7 @@ export default function ProductPage() {
       >
         بازگشت
       </button>
-      
+
     </div>
   );
 }
