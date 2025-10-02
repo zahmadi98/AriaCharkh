@@ -29,25 +29,24 @@
 ---
 
 ## ⚡ Quick start
-
-```bash
-# clone
+# کلون کردن مخزن
 git clone https://github.com/zahmadi98/AriaCharkh.git
 cd AriaCharkh
 
-# install
-npm install          # یا yarn / pnpm
+# نصب وابستگی‌ها (npm)
+npm install
 
-# dev
+# اجرای محیط توسعه (HMR)
 npm run dev
 
-# build
+# ساخت production
 npm run build
 
-# preview build
+# پیش‌نمایش build
 npm run preview
-
+اگر از yarn یا pnpm استفاده می‌کنی، معادل‌هایشان را اجرا کن.
 ---
+
 ## 🗂️ پیشنهادی ساختار پروژه
 /src
   ├─ assets/
@@ -63,8 +62,8 @@ package.json
 tailwind.config.js
 vite.config.js
 postcss.config.js
-
 ---
+
 ## 📦 اسکریپت‌های پیشنهادی (package.json)
 {
   "scripts": {
@@ -75,8 +74,8 @@ postcss.config.js
     "format": "prettier --write ."
   }
 }
-
 ---
+
 ## 🛠️ نکات پیکربندی و دیپلوی
 
 در tailwind.config.js مطمئن شو content شامل ./src/**/*.{js,jsx,ts,tsx,html} باشه تا CSS اضافی حذف شه.
@@ -85,12 +84,14 @@ postcss.config.js
 
 متغیرهای حساس (API keys) رو در Secrets پلتفرم دیپلوی نگه دار.
 ---
+
 ## 🧪 تست و CI (پیشنهاد)
 
 اضافه کردن GitHub Actions برای lint و build باعث می‌شود هر PR قبل از merge چک شود.
 
 نمونه workflow: اجرای npm ci, npm run lint, npm run build.
 ---
+
 ## 🤝 مشارکت (Contributing)
 
 ممنون از علاقه‌ات به مشارکت! اینجا یک روند پیشنهادی ساده برای همکاری و ارسال تغییرات آمده:
