@@ -14,12 +14,12 @@ export default function MainCard({
   discountPercent = 80,
 }) {
   return (
-    <div className="max-w-[45rem] w-full bg-white rounded-xl h-[40rem] lg:h-[50rem] shadow-md overflow-hidden">
+    <div className="max-w-[45rem] w-full bg-white rounded-xl h-[50rem] sm:h-[54rem] lg:h-[50rem] shadow-md overflow-hidden">
       <h1 className="text-right text-xl pt-5 pb-3 pr-5 text-[#ED1A3B] font-vazir">
         {Title}
       </h1>
 
-      <div className="relative h-[60%] lg:h-[69%]">
+      <div className="relative h-[60%] sm:h-[70%] lg:h-[69%]">
         <img src={image} className="w-full h-full object-cover" />
       </div>
 
