@@ -44,7 +44,7 @@ npm run dev
 npm run build
 
 # پیش‌نمایش build
-npm run preview
+npm run preview```
 ---
 
 ## 🗂️ پیشنهادی ساختار پروژه
