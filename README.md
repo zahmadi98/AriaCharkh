@@ -4,10 +4,9 @@
 [![Forks](https://img.shields.io/github/forks/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/network/members)
 [![Issues](https://img.shields.io/github/issues/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/issues)
 [![License](https://img.shields.io/github/license/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/blob/main/LICENSE)
-[![Repo size](https://img.shields.io/github/repo-size/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh)
 [![Last commit](https://img.shields.io/github/last-commit/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/commits)
 
-> یک اسکلت (boilerplate) سریع و مینیمال برای پروژه‌های فرانت‌اند — ساخته‌شده با **React + Vite + Tailwind**. مناسب برای شروع پروژه‌های SPA یا صفحات مستقل.
+یک اسکلت سریع و مینیمال برای پروژه‌های فرانت‌اند — ساخته‌شده با **React + Vite + Tailwind**. مناسب برای شروع SPAها یا صفحات مستقل.
 
 ---
 
@@ -20,7 +19,7 @@
 ---
 
 ## 🧰 Tech stack
-- React
+- React (v18+)
 - Vite
 - Tailwind CSS
 - PostCSS
@@ -29,6 +28,8 @@
 ---
 
 ## ⚡ Quick start
+
+```bash
 # کلون کردن مخزن
 git clone https://github.com/zahmadi98/AriaCharkh.git
 cd AriaCharkh
@@ -44,7 +45,6 @@ npm run build
 
 # پیش‌نمایش build
 npm run preview
-اگر از yarn یا pnpm استفاده می‌کنی، معادل‌هایشان را اجرا کن.
 ---
 
 ## 🗂️ پیشنهادی ساختار پروژه
