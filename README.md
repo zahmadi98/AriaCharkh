@@ -28,8 +28,6 @@
 ---
 
 ## ⚡ Quick start
-
-```bash
 # کلون کردن مخزن
 git clone https://github.com/zahmadi98/AriaCharkh.git
 cd AriaCharkh
@@ -44,7 +42,8 @@ npm run dev
 npm run build
 
 # پیش‌نمایش build
-npm run preview```
+npm run preview
+
 ---
 
 ## 🗂️ پیشنهادی ساختار پروژه
@@ -62,6 +61,7 @@ package.json
 tailwind.config.js
 vite.config.js
 postcss.config.js
+
 ---
 
 ## 📦 اسکریپت‌های پیشنهادی (package.json)
@@ -74,6 +74,7 @@ postcss.config.js
     "format": "prettier --write ."
   }
 }
+
 ---
 
 ## 🛠️ نکات پیکربندی و دیپلوی
@@ -83,6 +84,7 @@ postcss.config.js
 برای دیپلوی ساده از Vercel یا Netlify استفاده کن؛ هر دو با Vite سازگارند.
 
 متغیرهای حساس (API keys) رو در Secrets پلتفرم دیپلوی نگه دار.
+
 ---
 
 ## 🧪 تست و CI (پیشنهاد)
@@ -90,6 +92,7 @@ postcss.config.js
 اضافه کردن GitHub Actions برای lint و build باعث می‌شود هر PR قبل از merge چک شود.
 
 نمونه workflow: اجرای npm ci, npm run lint, npm run build.
+
 ---
 
 ## 🤝 مشارکت (Contributing)
