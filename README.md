@@ -1,16 +1,110 @@
-# React + Vite
+# 🚴 AriaCharkh
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Stars](https://img.shields.io/github/stars/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/stargazers)
+[![Forks](https://img.shields.io/github/forks/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/network/members)
+[![Issues](https://img.shields.io/github/issues/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/issues)
+[![License](https://img.shields.io/github/license/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/blob/main/LICENSE)
+[![Repo size](https://img.shields.io/github/repo-size/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh)
+[![Last commit](https://img.shields.io/github/last-commit/zahmadi98/AriaCharkh?style=flat-square)](https://github.com/zahmadi98/AriaCharkh/commits)
 
-Currently, two official plugins are available:
+> یک اسکلت (boilerplate) سریع و مینیمال برای پروژه‌های فرانت‌اند — ساخته‌شده با **React + Vite + Tailwind**. مناسب برای شروع پروژه‌های SPA یا صفحات مستقل.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Highlights
+- بوت‌استرپ سریع با Vite (HMR)
+- طراحی utility-first با Tailwind CSS
+- ساختار تمیز و قابل توسعه برای کامپوننت‌ها، صفحات و هوک‌ها
+- آمادهٔ توسعه محلی و دیپلوی روی پلتفرم‌های محبوب (Vercel / Netlify)
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tech stack
+- React
+- Vite
+- Tailwind CSS
+- PostCSS
+- (اختیاری) ESLint / Prettier
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚡ Quick start
+
+```bash
+# clone
+git clone https://github.com/zahmadi98/AriaCharkh.git
+cd AriaCharkh
+
+# install
+npm install          # یا yarn / pnpm
+
+# dev
+npm run dev
+
+# build
+npm run build
+
+# preview build
+npm run preview
+
+---
+## 🗂️ پیشنهادی ساختار پروژه
+/src
+  ├─ assets/
+  ├─ components/
+  ├─ layouts/
+  ├─ pages/
+  ├─ hooks/
+  ├─ utils/
+  ├─ App.jsx
+  └─ main.jsx
+index.html
+package.json
+tailwind.config.js
+vite.config.js
+postcss.config.js
+
+---
+## 📦 اسکریپت‌های پیشنهادی (package.json)
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx",
+    "format": "prettier --write ."
+  }
+}
+
+---
+## 🛠️ نکات پیکربندی و دیپلوی
+
+در tailwind.config.js مطمئن شو content شامل ./src/**/*.{js,jsx,ts,tsx,html} باشه تا CSS اضافی حذف شه.
+
+برای دیپلوی ساده از Vercel یا Netlify استفاده کن؛ هر دو با Vite سازگارند.
+
+متغیرهای حساس (API keys) رو در Secrets پلتفرم دیپلوی نگه دار.
+---
+## 🧪 تست و CI (پیشنهاد)
+
+اضافه کردن GitHub Actions برای lint و build باعث می‌شود هر PR قبل از merge چک شود.
+
+نمونه workflow: اجرای npm ci, npm run lint, npm run build.
+---
+## 🤝 مشارکت (Contributing)
+
+ممنون از علاقه‌ات به مشارکت! اینجا یک روند پیشنهادی ساده برای همکاری و ارسال تغییرات آمده:
+
+مخزن را Fork کن.
+
+از شاخهٔ main/master یک شاخهٔ محلی جدید بساز:
+git checkout -b feat/your-feature
+
+کدت را اضافه/تغییر بده و کامیت کن:
+git add .
+git commit -m "feat: توضیح مختصر تغییرات"
+
+شاخه را به Fork خود پوش کن:
+git push origin feat/your-feature
+
+از صفحهٔ GitHub روی مخزن اصلی یک Pull Request باز کن.
