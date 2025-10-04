@@ -180,7 +180,7 @@ setLoaded(true);
   return (
 <div className="flex justify-center">
 <div
-className="relative bg-[#ED1A3B] my-2 mr-12 md:mx-40 w-full rounded-r-2xl md:rounded-2xl"
+className="relative bg-[#ED1A3B] my-2 md:mr-28 lg:mx-40 w-full rounded-r-2xl md:rounded-2xl"
 style={{ padding: "1.5rem" }}
 >
 <div
@@ -244,11 +244,11 @@ width: overlayRect.width,
 pointerEvents: "none",
 }}
 >
-            <h3 className="text-white text-3xl text-center font-vazir font-bold">پیشنهاد شگفت انگیز</h3>
+            <h3 className="text-white text-3xl lg:text-center font-vazir font-bold">پیشنهاد شگفت انگیز</h3>
 <div className="flex items-center gap-1">
 <a
 href="/next-page"
-className="mt-2 text-sm text-white px-3 py-1 rounded-md pointer-events-auto font-vazir"
+className="mt-2 text-sm text-white px-0 lg:px-3 py-1 rounded-md pointer-events-auto font-vazir"
 >
 مشاهده همه
 </a>

@@ -14,7 +14,7 @@ const Banner = () => {
   return (
     <div className="space-y-12 mb-10 mt-10 font-vazir mr-4">
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 2xl:grid-cols-6 mx-1 sm:mx-3 md:mx-5 lg:mx-32 xl:mx-24 2xl:mx-56 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-6 mx-1 sm:mx-3 md:mx-5 lg:mx-16 xl:mx-24 2xl:mx-56 gap-6">
         
         <div className="flex flex-col items-center">
           <div className="bg-gradient-to-br from-[#ADC0FF] to-[#A8AEFF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
@@ -67,7 +67,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 mx-3 gap-6 sm:mx-5 lg:mx-32 xl:mx-44 2xl:mx-72">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-3 gap-6 sm:mx-5 lg:mx-16 xl:mx-44 2xl:mx-72">
         
         <div className="flex flex-col items-center">
           <div className="bg-gradient-to-br from-[#BAFFAD] to-[#ADCEFF] rounded-full w-[8rem] h-[8rem] sm:w-[9rem] sm:h-[9rem] md:w-[11rem] md:h-[11rem] grid place-items-center">
