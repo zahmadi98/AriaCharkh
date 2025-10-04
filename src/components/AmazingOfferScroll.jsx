@@ -4,33 +4,36 @@ import { ArrowLeft2 } from "iconsax-react";
 import "keen-slider/keen-slider.min.css";
 import ProductCard from "./ProductCard";
 import OfferItems from "../assets/OfferItems.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useProduct } from "../Context/ProductContext";
 
 export default function FixedOverlaySlider() {
-  const containerRef = useRef(null);
-  const [overlayRect, setOverlayRect] = useState(null);
-  const [loaded, setLoaded] = useState(false);
+const containerRef = useRef(null);
+const [overlayRect, setOverlayRect] = useState(null);
+const [loaded, setLoaded] = useState(false);
+const navigate = useNavigate();
+const { setProduct } = useProduct();
 
   const [sliderRef, instanceRef] = useKeenSlider(
-    {
-      loop: true,
-      mode: "free",
-      rtl: true,
-      slides: { perView: 7, spacing: 15 },
-      breakpoints: {
-        "(max-width: 768px)": {
-          slides: { perView: 1.2, spacing: 15 },
-        },
-        "(min-width: 769px) and (max-width: 1024px)": {
-          slides: { perView: 3, spacing: 15 },
-        },
-      },
-      created() {
-        setLoaded(true);
-      },
-    },
-    []
-  );
+{
+loop: true,
+mode: "free",
+rtl: true,
+slides: { perView: 7, spacing: 15 },
+breakpoints: {
+"(max-width: 768px)": {
+slides: { perView: 1.2, spacing: 15 },
+},
+"(min-width: 769px) and (max-width: 1024px)": {
+slides: { perView: 3, spacing: 15 },
+},
+},
+created() {
+setLoaded(true);
+},
+},
+[]
+);
 
   const combinedRef = (el) => {
     sliderRef(el);
@@ -175,90 +178,87 @@ export default function FixedOverlaySlider() {
   ];
 
   return (
-    <div className="flex justify-center">
-      <div
-        className="relative bg-[#ED1A3B] my-2 mr-12 md:mx-40 w-full rounded-r-2xl md:rounded-2xl"
-        style={{ padding: "1.5rem" }}
-      >
-        <div
-          ref={combinedRef}
-          dir="rtl"
-          className="keen-slider rounded-2xl overflow-visible relative z-0"
-        >
-          {products.map((prod) => {
-            // state فقط داده‌های ساده ارسال می‌شود
-            const stateData = {
-              Title: prod.Title,
-              image: prod.image,
-              Description: prod.Description,
-              originalPrice: prod.originalPrice,
-              price: prod.price,
-              discountPercent: prod.discountPercent,
-              progress: prod.progress,
-              Score: prod.Score,
-              TimeLeft: prod.TimeLeft,
-            };
+<div className="flex justify-center">
+<div
+className="relative bg-[#ED1A3B] my-2 mr-12 md:mx-40 w-full rounded-r-2xl md:rounded-2xl"
+style={{ padding: "1.5rem" }}
+>
+<div
+ref={combinedRef}
+dir="rtl"
+className="keen-slider rounded-2xl overflow-visible relative z-0"
+>
+{products.map((prod) => {
+return (
+<div key={prod.id} className="keen-slider__slide">
+<button
+  onClick={() => {
+    setProduct(prod);
+    navigate("/product", { state: prod });
+    console.log(prod);
+    console.log("navigating");
+  }}
+  className="block w-full text-left"
+>
+  <ProductCard
+    image={prod.image}
+    originalPrice={prod.originalPrice}
+    price={prod.price}
+    discountPercent={String(prod.discountPercent)}
+    progress={prod.progress}
+  />
+</button>
 
-            return (
-              <div key={prod.id} className="keen-slider__slide">
-                <Link to="/product" state={stateData} className="block w-full">
-                  <ProductCard
-                    image={prod.image}
-                    originalPrice={prod.originalPrice}
-                    price={prod.price}
-                    discountPercent={String(prod.discountPercent)}
-                    progress={prod.progress}
-                  />
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+</div>
+);
+})}
+</div>
+       {loaded && instanceRef.current && (
+<Arrow left onClick={() => instanceRef.current?.next()} ariaLabel="اسلاید بعدی" />
+)}
 
-        {loaded && instanceRef.current && (
-          <Arrow left onClick={() => instanceRef.current?.next()} ariaLabel="اسلاید بعدی" />
-        )}
 
-        {overlayRect && (
-          <div
-            className="absolute pointer-events-none z-10 text-center top-0 bottom-0 right-0"
-            style={{
-              left: overlayRect.left,
-              width: "14.5rem",
-              background: "#ED1A3B",
-              borderTopRightRadius: "1rem",
-              borderBottomRightRadius: "1rem",
-            }}
-          />
-        )}
+{overlayRect && (
+<div
+className="absolute pointer-events-none z-10 text-center top-0 bottom-0 right-0"
+style={{
+left: overlayRect.left,
+width: "14.5rem",
+background: "#ED1A3B",
+borderTopRightRadius: "1rem",
+borderBottomRightRadius: "1rem",
+}}
+/>
+)}
 
-        {overlayRect && (
-          <div
-            className="absolute z-20 flex flex-col items-center justify-center"
-            style={{
-              left: overlayRect.left,
-              top: 0,
-              bottom: 0,
-              right: 10,
-              width: overlayRect.width,
-              pointerEvents: "none",
-            }}
-          >
+
+{overlayRect && (
+<div
+className="absolute z-20 flex flex-col items-center justify-center"
+style={{
+left: overlayRect.left,
+top: 0,
+bottom: 0,
+right: 10,
+width: overlayRect.width,
+pointerEvents: "none",
+}}
+>
             <h3 className="text-white text-3xl text-center font-vazir font-bold">پیشنهاد شگفت انگیز</h3>
-            <div className="flex items-center gap-1">
-              <a
-                href="/next-page"
-                className="mt-2 text-sm text-white px-3 py-1 rounded-md pointer-events-auto font-vazir"
-              >
-                مشاهده همه
-              </a>
-              <ArrowLeft2 size={16} color="#FFF" />
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+<div className="flex items-center gap-1">
+<a
+href="/next-page"
+className="mt-2 text-sm text-white px-3 py-1 rounded-md pointer-events-auto font-vazir"
+>
+مشاهده همه
+</a>
+<ArrowLeft2 size={16} color="#FFF" />
+</div>
+</div>
+)}
+</div>
+</div>
+);
 }
 
 function Arrow({ left, onClick, ariaLabel }) {
