@@ -10,6 +10,7 @@ import Banner from './components/Banner.jsx';
 import BigIcons from './components/BigIcons.jsx';
 import ProductPage from "./components/ProductPage";
 import { ProductProvider } from "./Context/ProductContext";
+import BannerTwo from "./components/BannerTwo.jsx";
 
 
 function AboutPage() {
@@ -21,35 +22,35 @@ return <div className="p-10 text-xl">این صفحه تماس با ما است</
 function App() {
 return (
 <Router>
-<ProductProvider>
-<div className="min-h-screen bg-gray-100">
-<div className="w-full px-20 py-2 bg-[#ED1A3B] md:bg-[#FCDEE0] h-[2.5rem] md:h-[3.688rem]"></div>
-<StatusBar />
-<Navbar />
-<Menu />
+  <ProductProvider>
+    <div className="min-h-screen bg-gray-100">
+    <div className="w-full px-20 py-2 bg-[#ED1A3B] md:bg-[#FCDEE0] h-[2.5rem] md:h-[3.688rem]"></div>
+  <StatusBar />
+  <Navbar />
+  <Menu />
 
 
-<Routes>
-<Route
-path="/"
-element={
-<>
-<Slider />
-<IconSection />
-<AmazingOfferScroll />
-<Banner />
-<BigIcons />
-<Banner />
-</>
-}
-/>
-<Route path="/about" element={<AboutPage />} />
-<Route path="/contact" element={<ContactPage />} />
-<Route path="/product" element={<ProductPage />} />
-</Routes>
-</div>
-</ProductProvider>
-</Router>
+  <Routes>
+    <Route
+      path="/"
+      element={
+    <>
+    <Slider />
+    <IconSection />
+    <AmazingOfferScroll />
+    <Banner />
+    <BigIcons />
+    <Banner />
+    <BannerTwo />
+    </>}
+    />
+    <Route path="/about" element={<AboutPage />} />
+    <Route path="/contact" element={<ContactPage />} />
+    <Route path="/product" element={<ProductPage />} />
+  </Routes>
+  </div>
+  </ProductProvider>
+  </Router>
 );
 }
 
