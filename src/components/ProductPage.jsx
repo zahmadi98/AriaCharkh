@@ -35,7 +35,7 @@ export default function ProductPage() {
   const handleScroll = () => {
     if (!mainCardRef.current) return;
     const rect = mainCardRef.current.getBoundingClientRect();
-    if (rect.bottom < window.innerHeight - 100) { 
+    if (rect.bottom < window.innerHeight - 90) { 
       setShowSide(true);
     } else {
       setShowSide(false);
@@ -68,7 +68,7 @@ export default function ProductPage() {
 
   return (
     <div className="p-6 sm:p-8 min-h-screen bg-gray-50 font-vazir">
-      <div className="text-center mb-10">
+      <div className="text-center mb-24 sm:mb-10">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
           معرفی محصول و خرید آن
         </h1>
