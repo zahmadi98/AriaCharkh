@@ -20,7 +20,6 @@ const BannerTwo = () => {
             alt={`bicycle-${index}`}
             className="w-full aspect-[4/5.2] md:aspect-[5/6] object-cover rounded-lg transition-transform duration-300"
           />
-          {/* overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg"></div>
         </div>
       ))}
